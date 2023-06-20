@@ -110,9 +110,7 @@ if tabs=="Facebook":
         margin: 10px;
     """
     if  url!="":
-        options = {
-            "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]",
-            "merge_output_format": "mp4"}
+        options = {}
         with yt_dlp.YoutubeDL(options) as  ytdl:
             try:
                 with ytdl:
