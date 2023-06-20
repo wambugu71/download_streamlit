@@ -110,7 +110,9 @@ if tabs=="Facebook":
         margin: 10px;
     """
     if  url!="":
-        options = {}
+        options = {
+            "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]",
+            "merge_output_format": "mp4"}
         with yt_dlp.YoutubeDL(options) as  ytdl:
             try:
                 with ytdl:
@@ -119,13 +121,22 @@ if tabs=="Facebook":
                         video = info["entries"][0]
                     else:
                         video = info
+                    link_d = []
                     for  i in video["formats"]:
-                        link  = i["url"]
-                        st.markdown("""
-                        <div style='{}'>
-                        <a href="{}">Download link<a>
-                        </div>
-                    """.format(card_style2,i["url"]), unsafe_allow_html=True)
+                        link_d.append(i["url"])
+
+                    link1  = link_d[2]
+                    link2 = link_d[3]
+                    st.markdown("""
+                    <div style='{}'>
+                    <a href="{}">Download link<a>
+                    </div>
+                """.format(card_style2,link1), unsafe_allow_html=True)
+                    st.markdown("""
+                    <div style='{}'>
+                    <a href="{}">Download link<a>
+                    </div>
+                """.format(card_style2,link2), unsafe_allow_html=True)
                     card_style2 = """
                         display: flex;
                         flex-direction: column;
