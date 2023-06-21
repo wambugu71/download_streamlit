@@ -129,12 +129,58 @@ if tabs=="Facebook":
                     link2 = link_d[3]
                     st.markdown("""
                     <div style='{}'>
-                    <a href="{}">Download link<a>
+                    <button class="custom-button" href="{}">Download</button>
+
+                    <style>
+                    .custom-button {
+                      display: inline-block;
+                      padding: 10px 20px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      border: none;
+                      border-radius: 5px;
+                      background-color: #ffc107;
+                      color: #fff;
+                      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+                      transition: all 0.3s ease-in-out;
+                    }
+                    
+                    .custom-button:hover {
+                      background-color: #ffa000;
+                      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+                      transform: translateY(-3px);
+                      cursor: pointer;
+                    }
+                    </style>
                     </div>
                 """.format(card_style2,link1), unsafe_allow_html=True)
                     st.markdown("""
                     <div style='{}'>
-                    <a href="{}">Download link<a>
+                    
+                    <button class="custom-button" href="{}">Download</button>
+
+                    <style>
+                    .custom-button {
+                      display: inline-block;
+                      padding: 10px 20px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      border: none;
+                      border-radius: 5px;
+                      background-color: #ffc107;
+                      color: #fff;
+                      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+                      transition: all 0.3s ease-in-out;
+                    }
+                    
+                    .custom-button:hover {
+                      background-color: #ffa000;
+                      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+                      transform: translateY(-3px);
+                      cursor: pointer;
+                    }
+                    </style>
+          
                     </div>
                 """.format(card_style2,link2), unsafe_allow_html=True)
                     card_style2 = """
