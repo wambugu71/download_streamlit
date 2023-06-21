@@ -109,6 +109,28 @@ if tabs=="Facebook":
         background-color: white;
         margin: 10px;
     """
+    button_style="""
+        .custom-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffc107;
+        color: #fff;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+        }
+        
+        .custom-button:hover {
+        background-color: #ffa000;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+        transform: translateY(-3px);
+        cursor: pointer;
+        } 
+    """
+        
     if  url!="":
         options = {
             "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]",
@@ -128,59 +150,19 @@ if tabs=="Facebook":
                     link1  = link_d[2]
                     link2 = link_d[3]
                     st.markdown("""
-                    <div style='{}'>
-                    <button class="custom-button" href="{}">Download</button>
-
+                    <div style='{card_style2}'>
+                    <button class="custom-button" href="{link1}">Download</button>
                     <style>
-                    .custom-button {
-                      display: inline-block;
-                      padding: 10px 20px;
-                      font-size: 16px;
-                      font-weight: bold;
-                      border: none;
-                      border-radius: 5px;
-                      background-color: #ffc107;
-                      color: #fff;
-                      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-                      transition: all 0.3s ease-in-out;
-                    }
-                    
-                    .custom-button:hover {
-                      background-color: #ffa000;
-                      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
-                      transform: translateY(-3px);
-                      cursor: pointer;
-                    }
+                    {button_style}
                     </style>
                     </div>
-                """.format(card_style2,link1), unsafe_allow_html=True)
-                    st.markdown("""
-                    <div style='{}'>
-                    
-                    <button class="custom-button" href="{}">Download</button>
-
+                """, unsafe_allow_html=True)
+                    st.markdown(f"""
+                    <div style='{card_style2}'>
+                    <button class="custom-button" href="{link2}">Download</button>
                     <style>
-                    .custom-button {
-                      display: inline-block;
-                      padding: 10px 20px;
-                      font-size: 16px;
-                      font-weight: bold;
-                      border: none;
-                      border-radius: 5px;
-                      background-color: #ffc107;
-                      color: #fff;
-                      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-                      transition: all 0.3s ease-in-out;
-                    }
-                    
-                    .custom-button:hover {
-                      background-color: #ffa000;
-                      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
-                      transform: translateY(-3px);
-                      cursor: pointer;
-                    }
+                    {button_style}
                     </style>
-          
                     </div>
                 """.format(card_style2,link2), unsafe_allow_html=True)
                     card_style2 = """
