@@ -151,21 +151,18 @@ if tabs=="Facebook":
                         </style>
                         }
                     """
-                    st.markdown(f"""
-                    <div style='{card_style2}'>
-                    <button class="custom-button" href="{link1}">Download</button>             <style>
-                    {button_style}
-                    </style>
+                    st.markdown("""
+                    <div style='{}'>
+                    <b> Download  low quality:</a><br/>
+                    <a href="{}">Download Here</a>
                     </div>
-                """, unsafe_allow_html=True)
-                    st.markdown(f"""
-                    <div style='{card_style2}'>
-                    <button class="custom-button" href="{link2}">Download</button>
-                    <style>
-                    {button_style}
-                    </style>
+                """.format(card_style2, link1), unsafe_allow_html=True)
+                    st.markdown("""
+                    <div style='{}'>
+                    <b> Download  High quality:</a><br/>
+                    <a href="{}">Download Here</a>
                     </div>
-                """, unsafe_allow_html=True)
+                """.format(card_style2, link2), unsafe_allow_html=True)
                     card_style2 = """
                         display: flex;
                         flex-direction: column;
