@@ -61,7 +61,7 @@ if tabs=="Youtube":
     if video_url:
         # Set options for download
         ydl_opts = {
-            'format': 'bestvideo[height=720][ext=mp4]+bestaudio[ext=m4a]/best[height=480][ext=mp4]+bestaudio[ext=m4a]',
+            'format': 'bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[height<=360][ext=mp4]+bestaudio[ext=m4a]',
             'outtmpl': '%(id)s.%(ext)s',
         }
 
@@ -75,7 +75,7 @@ if tabs=="Youtube":
         formats = info_dict.get('formats', [])
 
         # Find the 480p format with sound
-        format_480p = next((f for f in formats if f.get('height') == 480 and f.get('acodec') is not None), None)
+        format_480p = next((f for f in formats if f.get('height') == 360 and f.get('acodec') is not None), None)
         if format_480p:
             download_link_480p = format_480p['url']
             st.markdown("### 480p Download Link:")
